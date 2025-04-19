@@ -1,0 +1,78 @@
+<section class="mx-5">
+  <h1 class="text-2xl font-bold">Pipes básicos</h1>
+  <h3 class="text-xl font-thin">Pipes incluidos en Angular</h3>
+</section>
+<br>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full bg-amber-500">
+  <div class="stat">
+    <div class="stat-title">Lowercase Pipe</div>
+    <div class="stat-value">{{nameUpper() | uppercase }}</div>
+    <div class="stat-desc">{{nameLower()}}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Uppercase Pipe</div>
+    <div class="stat-value">{{nameLower() | lowercase}}</div>
+    <div class="stat-desc">{{nameUpper()}}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Titlecase Pipe</div>
+    <div class="stat-value">{{fullName()|titlecase}}</div>
+    <div class="stat-desc">{{fullName()}}</div>
+  </div>
+</div>
+
+<!-- Agregar un margen para separar los bloques -->
+<div class="divider my-5"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full bg-red-600">
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ customDate() | date }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date | long | GMT-6</div>
+    <div class="stat-value">{{ customDate() | date: 'short': 'GMT-6'}}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date | short | GMT-6</div>
+    <div class="stat-value">{{ customDate() | date: 'short': 'GMT-6'}}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+</div>
+
+<div class="divider my-5"></div>
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full bg-green-600">
+
+  <div class="stat">
+    <div class="stat-title">Date | medium | GMT-6</div>
+    <div class="stat-value">{{ customDate() | date: 'medium': 'GMT-6'}}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+  <div class="stat">
+    <div class="stat-title">Date | full | GMT-6</div>
+    <div class="stat-value">{{ customDate() | date: 'full': 'GMT-6'}}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<div class="flex flex-roww gap-2">
+  <h1 class="text-2xl font-bold">Locale Actual</h1>
+
+  <span class="badge badge-secondary">{{ currentLocale() }} </span>
+
+  <button (click)="changeLocale('fr')" class="btn bten-primary">Cambiar en Francés</button>
+  <button (click)="changeLocale('en')"class="btn bten-primary">Cambiar en English</button>
+  <button (click)="changeLocale('es')"class="btn bten-primary">Cambiar en Español</button>
+</div>
